@@ -1,0 +1,81 @@
+/* Permitir escolher o offset (deslocamento). (html)
+
+#   Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser cifrado. (html)
+   Implementa cipher.encode. (js)
+   Mostrar o resultado da cifra corretamente. (html)
+
+   Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser descifrado. (html)
+   Implementa cipher.decode. (js)
+   Mostrar o resultado descifrado corretamente. (html)
+
+   Criar testes unitários.
+_____________
+Hacker edition
+  Permite usar um offset (deslocamento) negativo
+  Cifra/descifra outros caracteres (espaços, pontuação, ã, á, ...)
+  + .py
+*/
+
+let str = prompt('Digite uma frase para codificar:');
+let strArr = Array.from(str.toUpperCase());
+    // let str_leng = str.length;
+    // let str_up = (str.toUpperCase()).split("", str_leng);
+    // let str_arr = [str_up]
+
+// document.write(`A divisão da palavra é: ${str_spl} `);
+console.log(strArr);
+
+
+let chav = prompt('Digite um número entre 0 e 25 para definir a chave de deslocamento:');
+    // Disparar o prompt enquanto o usuário não digitar um número entre 1 e 25;
+
+const alfabeto = [];
+var alfChav = [];
+for (var i = 65; i <= 90; i++) {
+  let letter = String.fromCharCode(i);
+  alfabeto.push(letter);
+  alfChav.push(letter);
+
+// o programa só vai codificar se a chave for maior q zero
+  if (chav > 0) {
+    for (a = 0; a <= strArr.length; a++) {
+      if (strArr[a] == String.fromCharCode(i)) {
+        var pos = (i-65);
+        console.log('Posição: ' + alfChav[pos]);
+    let count = 0;
+      while (count < chav) {
+        var changePos = alfChav.shift();
+        changePos = alfChav.push(changePos);
+        count++;
+      }
+    console.log(alfChav[pos]);
+        // var number = alfChav[pos].charCodeAt(0);
+        // number = number - 65;
+        // var cod = [];
+        // cod.push(number);
+    }
+  }
+}
+  else {
+    console.log(str);
+  }
+}
+// if (chav > 0) {
+//   let count = 0;
+//   while (count < chav) {
+//     var changePos = alfChav.shift();
+//     changePos = alfChav.push(changePos);
+//     count++;
+//   }
+//     console.log(alfChav[pos]);
+//     // console.log(cod);
+//     }
+
+
+// 1 posição inicial do 'S' no alfabeto (=18) > mudar posição (chav) > encontrar as letras respectivas > printar
+// pegar a posição das letras no alfabeto e usar a mesma numeração para printar o alfChav
+// str_arr[i(=str_arr.length)] > encontrar no alfabeto
+
+
+// ((codigoASC - codigo1Letra)+desloc)%alfabeto.length) + codigo1Letra
+// F : ((70-65)+chav)%alfabeto.length)+65;

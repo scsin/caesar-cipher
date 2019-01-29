@@ -1,0 +1,26 @@
+
+body {
+  margin-top: 150px;
+  margin-left: 150px;
+  font-family: Arial, sans-serif;
+  background-color: rgb(45,43,99);
+  color: rgb(256,256,256);
+}
+
+input {
+  border: none;
+  width: 315px;
+  height: 30px;
+  background-color: rgb(127,212,255);
+  /* SUBLINHAR CADA LETRA EM BRANCO */
+}
+
+button {
+  width: 100px;
+  height: 20px;
+}
+
+div#result {
+  margin-left: 750px;
+
+}
