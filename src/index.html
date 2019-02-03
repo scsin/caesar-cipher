@@ -6,18 +6,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    Digite a frase que deseja codificar:<br>
-    <input type="text" name="" value=""></input><br><br>
-    Digite o número da chave de deslocamento:<br>
-    <input type="number" name="" value=""></input><br><br>
-    <button>Criptografar</button>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+    </style>
+    <div id="title"><h1>caesar cipher</h1></div>
+    <!-- <div><img id="backg" src="background_png.png" alt="">/<div> -->
+    <div id="infos">
+      <br><br>
+      <input id="frase" placeholder="Digite a frase que deseja codificar" type="text" name="" value=""></input><br><br>
+      <input id="chave" placeholder="N° da chave" type="number" name="" value=""></input><br><br>
+      <button onclick="buttonE()" onreset="">Encrypt</button>
+      <button onclick="buttonD()">Decrypt</button>
+      <br>
+    </div>
     <div id="result">
-      Mensagem criptograda<br><br>
-      Resultado
-      <script class="result"></script>
+      <p id="encode"></p>
+      <p id="decode"></p><br><br>
+    </div>
+    <div id="alphabets">
+      <p id="alphabet"></p>
+      <p id="alfEnc"></p>
     </div>
     <script id="cipher" src="cipher.js"></script>
-    <script src="tests.js"></script>
+    <!-- <script src="tests.js"></script> -->
   </body>
 </html>

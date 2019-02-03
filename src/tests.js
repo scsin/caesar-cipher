@@ -1,76 +1,103 @@
-/* Permitir escolher o offset (deslocamento). (html)
-
-#   Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser cifrado. (html)
-   Implementa cipher.encode. (js)
-   Mostrar o resultado da cifra corretamente. (html)
-
-   Permitir escrever um texto, com letras maiúsculas e minúsculas, para ser descifrado. (html)
-   Implementa cipher.decode. (js)
-   Mostrar o resultado descifrado corretamente. (html)
-
-   Criar testes unitários.
-_____________
-Hacker edition
-  Permite usar um offset (deslocamento) negativo
-  Cifra/descifra outros caracteres (espaços, pontuação, ã, á, ...)
-  + .py
+/* Hacker edition
+   Permite usar um offset (deslocamento) negativo
+   Cifra/descifra outros caracteres (espaços, pontuação, ã, á, ...)
+   + py
 */
+let str;
+let chav;
+let strArr;
+const alphabet = [];
+let alfEnc = [];
+let arrEnc = [];
 
-let str = prompt('Digite uma frase para codificar:');
-let strArr = Array.from(str.toUpperCase());
+function buttonE() {
+  str = document.getElementById("frase").value;
+  chav = document.getElementById("chave").value;
+  strArr = Array.from(str.toUpperCase());
+  alphOrg();
+  alphDesloc();
+  encode(strArr, chav);
+}
+function buttonD() {
+  str = document.getElementById("frase").value;
+  chav = document.getElementById("chave").value;
+  strArr = Array.from(str.toUpperCase());
+  alphOrg();
+  alphDesloc();
+  decode(strArr, chav);
+}
 
 // document.write(`A divisão da palavra é: ${strArr} `);
-console.log(strArr);
 
-let chav = prompt('Digite um inteiro positivo para definir a chave de deslocamento:');
-
-const alphabet = [];
-var alfEnc = [];
-var alfDec = [];
-
-// alfabeto
-for (var i = 65; i <= 90; i++) {
-  let letter = String.fromCharCode(i);
-  alphabet.push(letter);
-  alfEnc.push(letter);
-  alfDec.push(letter);
+// alphabet
+function alphOrg() {
+  for (var i = 65; i <= 90; i++) {
+    let letter = String.fromCharCode(i);
+    alphabet.push(letter);
+    alfEnc.push(letter);
+    document.getElementById("alphabet").innerHTML = alphabet;
+  }
 }
 
-// alfChav
-let count = 0;
-while (count < chav) {
-  var changePos = alfEnc.shift();
-  changePos = alfEnc.push(changePos);
-  count++;
+// alfEnc
+function alphDesloc() {
+  let count = 0;
+  while (count < chav) {
+    var changePos = alfEnc.shift();
+    changePos = alfEnc.push(changePos);
+    count++;
+    document.getElementById("alfEnc").innerHTML = alfEnc;
+  }
 }
 
-console.log(alphabet);
-console.log(alfEnc);
+// adicionar o espaço = ASC(20) nos alfabetos;
 
-var arrEnc = [];
+
 // encode
-// fazer um if (para if (id = 'encode' então .....) if ou else (id = 'decode' então ....))
-for (a = 0; a <= strArr.length; a++) {
-  for(i = 65; i <= 90; i++) {
-    if (strArr[a] == String.fromCharCode(i)) {
-      var pos = (i-65);
-      arrEnc.push(alfEnc[pos]);
-      console.log('Para a palavra: ' + strArr[a] + ' a cifra é: ' + alfEnc[pos]);
+// fazer um if ou um botão (para if (id = 'encode' então .....) if ou else (id = 'decode' então ....))
+// if (chav > 0) {  IF E ELSE PARA NÚMERO NEGATIVO (se colocar esse bloco precisa fazer + blocos para a montagem do alfEnc)
+function encode() {
+  for (a = 0; a <= strArr.length; a++) {
+    for(i = 65; i <= 90; i++) {
+      if (strArr[a] == String.fromCharCode(i)) {
+        let pos = (i-65);
+        arrEnc.push(alfEnc[pos]);
+        document.getElementById("encode").innerHTML = arrEnc.join('');
+      }
     }
   }
 }
-console.log(arrEnc.join(''));
 
-var arrDec = [];
+
+// }
+// else {
+//   for (a = 0; a <= strArr.length; a++) {
+//     for(i = 65; i <= 90; i++) {
+//       if (strArr[a] == String.fromCharCode(i)) {
+//         var pos = ((i-65)-chav);
+//         arrEnc.push(alfEnc[pos]);
+//         console.log('Para a palavra: ' + strArr[a] + ' a cifra é: ' + alfEnc[pos]);
+//       }
+//     }
+//   }
+// }
+// teste
+// if (arrEnc.join('') == 'XYZ') {
+//   console.log('legal');
+// }
+// else {
+//   console.log('erro');
+// }
+
 // decode
-var strDec = prompt('Digite uma frase para decodificar:');
-for (a = 0; a <= strArr.length; a++) {
-  for(i = 65; i <= 90; i++) {
-    if (strArr[a] == String.fromCharCode(i)) {
-      var pos = (i-65);
-      arrDec.push(alfDec[pos]);
-      console.log('Para a palavra: ' + arrEnc[a] + ' a cifra é: ' + alfDec[pos]);
+function decode() {
+  for (a = 0; a <= strArr.length; a++) {
+    for(i = 0; i <= 25; i++) {
+      if (strArr[a] == alphabet[i]) {
+        let pos = i-chav;
+        arrEnc.push(alphabet[pos]);
+        document.getElementById("decode").innerHTML = arrEnc.join('');
+      }
     }
   }
 }
-console.log(arrDec.join(''));

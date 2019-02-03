@@ -1,26 +1,39 @@
 
 body {
-  margin-top: 150px;
-  margin-left: 150px;
   font-family: Arial, sans-serif;
-  background-color: rgb(45,43,99);
+  background-color: rgb(20,10,90);
   color: rgb(256,256,256);
+}
+
+div#title {
+  margin-top: 70px;
+  margin-left: 450px;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 16pt;
+}
+
+div#infos {
+  margin-top: 130px;
+  margin-left: 150px;
+  background-image: url(background_png.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+div#result {
+  margin-top: 0px;
+  margin-left: 930px;
+}
+
+div#alphabets {
+  margin-top: 60px;
+  margin-left: 420px;
+  font-size: 15pt;
 }
 
 input {
   border: none;
   width: 315px;
   height: 30px;
-  background-color: rgb(127,212,255);
-  /* SUBLINHAR CADA LETRA EM BRANCO */
-}
-
-button {
-  width: 100px;
-  height: 20px;
-}
-
-div#result {
-  margin-left: 750px;
-
+  background-color: rgb(67,234,225);
 }
