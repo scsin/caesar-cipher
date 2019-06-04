@@ -23,7 +23,7 @@ function alphASC(button, key) {
     encrypt(key, encode, button);
 };
 
-function encrypt(key, encode, button) {
+function encrypt(key) {
     encode.innerHTML = '';
     const expression = document.getElementById('expression').value;
 
