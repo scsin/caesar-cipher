@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Titillium+Web&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="title"><h1>caesar cipher</h1></div>
+      <form action="" target="_self">
+        <div id="infos" class="info">
+          <input id="expression" placeholder="Digite a frase que deseja codificar" type="text"></input>
+          <input id="key" placeholder="N° da chave" type="number"></input>
+          <button id="buttonE" class="but" type="button">Encrypt</button>
+          <button id="buttonD" class="but" type="button">Decrypt</button>
+        </div>
+        <div class="result">
+          <p id="encode"></p>
+        </div>
+        <div class="alphabets">
+          <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+          <p id="alphEnc"></p>
+        </div>
+      </form>
+      <script id="cipher" src="cipher_asc.js"></script>
+    </main>
+  </body>
+</html>

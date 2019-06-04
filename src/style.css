@@ -1,39 +1,46 @@
 
+main {
+  text-align: center;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(20,10,90);
   color: rgb(256,256,256);
 }
 
-div#title {
+.title {
   margin-top: 70px;
-  margin-left: 450px;
   font-family: 'Major Mono Display', monospace;
   font-size: 16pt;
 }
 
-div#infos {
-  margin-top: 130px;
-  margin-left: 150px;
-  background-image: url(background_png.png);
-  background-position: center;
-  background-repeat: no-repeat;
+/* .image {
+  display: inline-block;
+} */
+
+.result {
+  font-size: 20pt;
+  margin-top: 5%;
 }
 
-div#result {
-  margin-top: 0px;
-  margin-left: 930px;
-}
-
-div#alphabets {
-  margin-top: 60px;
-  margin-left: 420px;
+.alphabets {
+  margin-bottom: auto;
   font-size: 15pt;
 }
 
 input {
   border: none;
-  width: 315px;
+  width: 250px;
   height: 30px;
   background-color: rgb(67,234,225);
+}
+
+button {
+  font-weight: bolder;
+  border-radius: 20px;
+  border-width: 0;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(20,10,90);
 }
