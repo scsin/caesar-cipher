@@ -17,13 +17,13 @@ vanilla JavaScript.
 
 O processo de desenvolvimento utilizou a ferramenta diagrama de bloco para uma construção lógica do projeto Cipher.
 
-# Início
-# Mensagem
-# Entrada de dados (Chave de deslocamento)
-# Entrada de dados (Cifrar ou Decifrar)
-# Processamento
-# Resultado
-# Fim
+* Início
+* Mensagem
+* Entrada de dados (Chave de deslocamento)
+* Entrada de dados (Cifrar ou Decifrar)
+* Processamento
+* Resultado
+* Fim
 
 
 O usuário deve seguir 3 passos para obter o resultado:
