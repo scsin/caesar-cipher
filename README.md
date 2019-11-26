@@ -18,7 +18,7 @@ Atualmente todas as cifras de substituição alfabética simples, são descifrad
 
 A lógica do projeto está implementada inteiramente em JavaScript(ES6).
 Nesse projeto não foi permitido usar bibliotecas ou frameworks, só
-vanilla JavaScript.
+**Vanilla JavaScript**.
 
 O processo de desenvolvimento utilizou a ferramenta diagrama de bloco para uma construção lógica do projeto Cipher.
 
